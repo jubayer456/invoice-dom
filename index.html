@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootStrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/9619db756e.js" crossorigin="anonymous"></script>
+
+    <!--   css link  -->
+    <link rel="stylesheet" href="style.css">
+    <title>Invoice</title>
+</head>
+
+<body>
+    <header>
+
+        <nav class="navbar  color-1 ">
+            <div class="container d-flex justify-content-center">
+                <a class="navbar-brand text-white " href="#">
+                    <span>YOUR INVOICE</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="color-2 w-75 text-center input-card  mx-auto mt-3">
+                <div class="p-3 color-1">Please enter the data....</div>
+                <div class=" p-3">
+                    <div class="input-group ">
+                        <span class="input-group-text">Buyer details</span>
+                        <textarea class="form-control" aria-label="With textarea" id="buyer-details"></textarea>
+                        <button class="btn btn-primary px-3" id="submit">Submit</button>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="p-2 color-1">Enter the item details....</div>
+                </div>
+                <div class="w-50 mx-auto pb-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Item name</span>
+                        <input id="item" type="text" class="form-control" placeholder="Item name of the product"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Price</span>
+                        <input id="price" type="text" class="form-control" placeholder="Price of the product"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Quantity</span>
+                        <input id="quantity" type="text" class="form-control" placeholder="Number of Quantity"
+                            aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <button class="btn btn-primary" id="addBtn">Add</button>
+                </div>
+                <div class="text-white p-2">
+                    <marquee behavior="" width="60%" height="100px" direction="left">You can add more items using input
+                        fields.</marquee>
+
+                </div>
+            </div>
+        </section>
+        <section class="container mt-3 p-3 color-3">
+            <h1 class="text-white">Invoice: #8723192</h1>
+            <hr class="text-white">
+            <div class="row g-4">
+                <div class="col col-lg-4 col-12">
+                    <div class="color-4 p-3 h-100 rounded text-warning">date : <span id="show-date"></span> </div>
+                </div>
+                <div class="col col-lg-4 col-12">
+                    <div class="color-4 p-3 h-100 rounded"><span class='text-warning'>
+                            Invoice To
+                        </span> <br>
+                        <span id="buyer-info">
+
+                        </span>
+                    </div>
+                </div>
+                <div class="col col-lg-4 col-12">
+                    <div class="color-4 p-3 h-100 rounded">
+                        <span class='text-warning'>
+                            Seller.
+                        </span> <br>
+                        <span>
+
+
+                            abcd inc
+                            hellow@apexo.com
+                            16 ctg, Bangladesh
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container p-4 color-3">
+            <table class="table table-light">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody id="info-table">
+                    <!-- <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr> -->
+
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td colspan="3" class="text-end fw-bold">SubTotal</td>
+                        <td class="text-right"> $<span id="sub-total">0</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-end fw-bold">Tax</td>
+                        <td class="text-right"> $<span id="tax">0</span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-end fw-bold">Grand Total</td>
+                        <td class="text-right"> $<span id="grand-total">0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="container p-4 color-4">
+            <div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div>
+                            <span class="text-warning">Bank Transfer
+                            </span><br>
+                            <span>
+
+                                Account Name: Sagar Biswas
+                                Account Number:1234567890934
+                                Code: 231231231212312
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="text-end">
+                            <p class="text-warning">Total Amount
+                            </p>
+                            <p>$ <span class='text-warning fw-bold fs-2' id="grand-total-2">
+                                    0
+                                </span><br> Taxes Included</p>
+                        </div>
+                    </div>
+                </div>
+                <p>Get started by creating a new file or uploading an existing file. We recommend every repository
+                    include a README, LICENSE, and .gitignore.</p>
+            </div>
+        </section>
+        <section class="container mt-5 mb-4">
+            <div class="d-flex justify-content-center p-3">
+                <button class="print-button mx-3">print invoice</button>
+                <button class="download-button mx-3">Download invoice</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="color-1 text-center">
+
+        <p class="p-4">All rights reserve @shda.com</p>
+    </footer>
+
+
+    <script src="index.js"></script>
+    <!-- js bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
